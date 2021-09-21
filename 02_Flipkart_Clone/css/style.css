@@ -1,0 +1,154 @@
+*{
+    margin: 0;padding: 0;
+}
+body{
+    background-color: #f1f3f6;
+}
+header{
+    overflow: hidden;
+}
+.navbar{
+    /* height: 8vh; */
+    height: 60px;
+    width: 100%;
+    background-color: #2874f0;
+}
+@media screen and (max-width:500px) {
+    .navbar{
+        background-color: red;
+    }
+}
+.navbar img{
+    width: 70px;
+    position: relative;
+    left: 260px;
+    top: 8px;
+}
+.navbar p{
+    color: white;
+    font-style: italic;
+    position: relative;
+    left: 258px;
+    bottom: -5px;
+}
+.navbar p span{
+    color:gold;
+}
+.navbar .searchbox{
+    position: relative;
+    left: 350px;
+    /* left: 51.4vh; */
+    bottom: 33px;
+    /* bottom:4vh ; */
+    width: 440px;
+    /* width: 64.75vh; */
+    padding: 9px;
+    /* padding: 1.32vh; */
+    background:url(../image_and_videos/search_logo.jpg);
+    background-size: 25px;
+    background-repeat: no-repeat;
+    background-position: right;
+    background-color: white;
+    font-size: 15px;
+}
+.navbar .btn{
+    position: relative;
+    left: 541px;
+    bottom: 32px;
+    width: 100px;
+    padding: 7px;
+    font-size: 17px;
+    color: #2874f0;
+    font-weight: bold;
+    cursor: pointer;
+
+}
+.navbar ul li{
+    position: relative;
+    left: 1170px;
+    bottom: 68px;
+    display: inline-block;
+    margin:0px 35px;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+header  img{
+    position: relative;
+    left: 1290px;
+    top:-53px;
+    width: 30px;
+    /* -webkit-filter: invert(1); */
+}
+/* Converting the black image to white  */
+#imglogo{
+    filter: invert();   
+}
+.slidebar{
+    position: relative;
+    bottom: 20px;
+    height: 500px;
+    border: 2px solid red;
+    margin: 0px 0px 5px 0px;
+    overflow-y: hidden;
+}
+.slidebar img{
+    /* height: 500px; */
+    margin:auto;
+    display: block;
+}
+.cart{
+    height: 70vh;
+    border: 3px solid blue;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    overflow: scroll;
+}
+.items{
+    /* display:; */
+    height: 220px ;
+    width: 150px;
+    /* border: 2px solid red; */
+}
+#para{
+    position: relative;
+    left: 10px;
+}
+/* @keyframes zoomeffect {
+    0%{
+        transform:scale(1) ;
+    }
+    100%{
+        transform: scale(1.02);
+    }
+} */
+#para:hover{
+    cursor: pointer;
+    text-decoration: underline;
+    image-rendering: optimizeQuality;
+}
+.items img:hover{
+    /* animation: zoomeffect 0.5s ease-in 1 normal; */
+    transform: scale(1.01);
+    
+}
+#item2 img{
+    position: relative;
+    left: 20px;
+}
+#item10 img{
+    position: relative;
+    left: 40px;
+}
+#item14 img{
+    position: relative;
+    left: 20px;
+}
+.footnav{
+    margin-top: 3px;
+    /* height: 150px; */
+    height: 80vh;
+    background-color: blue;
+    position: sticky;
+}
