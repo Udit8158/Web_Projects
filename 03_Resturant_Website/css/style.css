@@ -1,21 +1,29 @@
+/* Import the google font baloo bhai  */
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&display=swap');
+
+/* Style for whole website  */
 *{
     margin: 0;
     padding: 0;
 }
 body{
+    font-family: 'Baloo Bhai 2', cursive;
     overflow-x: hidden;
-    background-image: url(../images_and_videos/strawberrycake.jpg);
+    /* background-image: url(../images_and_videos/strawberrycake.jpg); */
     background-size: contain;
 }
+
+/* style for nvigation bar  */
 .navbar{
     display: flex;
    /* flex-direction: column-reverse; */
    /* flex-direction: row-reverse; */
-   background-color: yellow;
+   background-color: rgb(124, 124, 121);
    height: 60px;
    justify-content: center;
    align-content: center;
 }
+/* logo   */
 .navbar .logo{
     align-self: center;
     font-family: 'Dancing Script', cursive;
@@ -24,6 +32,8 @@ body{
     bottom: 4px;
     font-size: 30px;
 }
+
+/* logo image  */
 .navbar img{
     width: 80px;
     border: 1px solid none;
@@ -31,6 +41,8 @@ body{
     position: relative;
     right: 320px;
 }
+
+/* list of navigation  */
 ul{
     display: flex;
 }
@@ -39,10 +51,21 @@ ul li{
     margin: 8px 20px;
 
 }
+
 ul li a{
     text-decoration: none;
     font-size: 25px;
+    color: white;
 }
+/* hover effect in nav menu  */
+a:hover{
+    background-color: white;
+    color:black;
+}
+
+/* Main content  */
+/* container 1 for special dishes */
+
 .container1{
     /* height: 40vh; */
     height: 400px;
@@ -51,6 +74,33 @@ ul li a{
     justify-content: space-around;
     /* align-content: space-around; */
     background-image: url(../images_and_videos/restaurant-691397_1920.jpg);
+}
+/* Making the welcome animation */
+@keyframes welcome {
+    from{
+        visibility: hidden;
+    }
+    to{
+        visibility: visible;
+    }
+}
+/* Issue is that the animation is not work properly */
+.container1 h1{
+    height: 50px;
+    text-align: center;
+    position: relative;
+    left:512px;
+    top:10px;
+    background-color: rgb(80, 80, 146);
+    color: rgb(223, 213, 213);
+    font-size: 2.3rem;
+    visibility: hidden;
+    /* animation: welcome 8s ease 1 normal ; */
+    animation-name: welcome;
+    animation-duration: 8s;
+    animation-direction: initial;
+    animation-timing-function: inherit;
+    animation-fill-mode: inherit;
 }
 
 .container1 .box1{
@@ -63,9 +113,9 @@ ul li a{
     transition-duration: 500ms;
     display: flex;
     flex-direction: column;
-    
-    
-    
+    opacity: 0.9;  
+    position: relative;  
+    right: 370px;
 }
 .box1 p{
     position: relative;
@@ -107,7 +157,10 @@ ul li a{
     width: 35%;
     /* border: 2px solid blue; */
     margin:100px 0px;
-    background:url(../images_and_videos/noodles.jpg)
+    background:url(../images_and_videos/noodles.jpg);
+    opacity: 0.9; 
+    position: relative;
+    right: 40px;
 }
 .box2 p{
     position: relative;
@@ -115,6 +168,8 @@ ul li a{
     top: 20px;
     font-size: 30px;
     color: white;
+    position: relative;
+    right: 50px;
 }
 .box2 span{
     position: relative;    
@@ -124,14 +179,16 @@ ul li a{
     font-size: 15px;
     
 }
+
+/* Container 2 for all dishes  */
 .container2{
     height: 800px;
     /* border: 2px solid blue; */
-    margin:20px 0px;
+    margin:90px 0px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    background-image: url(../images_and_videos/lime-2481346_1920.jpg);
+    /* background-image: url(../images_and_videos/lime-2481346_1920.jpg); */
 }
 .container2 h3{
     /* text-align: center; */
@@ -155,7 +212,7 @@ ul li a{
 }
 #p1{
     position: relative;
-    bottom: 500px;
+    bottom: 580px;
     left: 240px;
     font-size: 20px;
 }
@@ -167,7 +224,7 @@ ul li a{
 }
 #p2{
     position: relative;
-    bottom: 547px;
+    bottom: 640px;
     left: 700px;
     font-size: 20px;
 }
@@ -179,7 +236,7 @@ ul li a{
 }
 #p3{
     position: relative;
-    bottom: 594px;
+    bottom: 710px;
     left: 1130px;
     font-size: 20px;
 }
@@ -191,7 +248,7 @@ ul li a{
 }
 #p4{
     position: relative;
-    bottom: 234px;
+    bottom: 380px;
     left: 275px;
     font-size: 20px;
 }
@@ -203,7 +260,7 @@ ul li a{
 }
 #p5{
     position: relative;
-    bottom: 281px;
+    bottom: 440px;
     left: 688px;
     font-size: 20px;
 }
@@ -215,7 +272,7 @@ ul li a{
 }
 #p6{
     position: relative;
-    bottom: 325px;
+    bottom: 510px;
     left: 1088px;
     font-size: 20px;
 }
@@ -227,3 +284,45 @@ ul li a{
 }
 
 
+.clients{
+    height: 600px;
+    border: 3px solid black;
+    /* margin-top: 20px; */
+    background: url(../images_and_videos/table-2879213_1920.jpg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+.clientname{
+    height: 200px;
+    width: 15%;
+    /* border: 2px solid blue; */
+    margin: 20px;
+    overflow: hidden;
+
+}
+
+#client1{
+    background:url(../images_and_videos/swiggy.png) center no-repeat 
+}
+#client2{
+    background:url(../images_and_videos/macdonald.png) center no-repeat 
+}
+#client3{
+    background:url(../images_and_videos/zomato.png) center no-repeat 
+}
+#client4{
+    background:url(../images_and_videos/kfc.png) center no-repeat 
+}
+#client5{
+    background:url(../images_and_videos/Amul.png) center no-repeat 
+}
+#client6{
+    background:url(../images_and_videos/dominos.png) center no-repeat 
+}
+
+/* .imgclient{
+    height:200px ;
+} */
