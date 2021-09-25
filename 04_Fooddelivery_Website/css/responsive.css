@@ -1,0 +1,28 @@
+@media only screen and (max-width: 1366px) {
+    body {
+      /* background-color: red; */
+      /* display: flex; */
+      
+      
+    }
+    .navbar {
+        height: 30vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+    }
+    .navbar ul{
+        justify-content: center;
+        background-color: black;
+    }
+    
+  }
+
+/* @media only screen and (max-width:1140px) {
+    body{
+        background-color: greenyellow;
+        position: fixed;
+    }
+} */
