@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Da+2&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Baloo Da 2", cursive;
+}
+.container {
+  background-color: antiquewhite;
+  width: 60vw;
+  height: 60vw;
+  margin: auto;
+}
+.container h1 {
+  text-align: center;
+}
+.container p {
+  text-align: center;
+  font-size: 20px;
+  margin-top: 20px;
+}
+#para {
+  font-weight: bolder;
+}
+#clock {
+  background-image: url(../images_and_videos/clock.png);
+  background-size: 100%;
+  width: 60%;
+  height: 60%;
+  border: 3px solid rebeccapurple;
+  margin: auto;
+  margin-top: 20px;
+}
+#hourHand {
+  background-color: black;
+  width: 0.7%;
+  height: 24%;
+  position: relative;
+  top: 133px;
+  left: 261px;
+  /* display: none; */
+  transform-origin: bottom;
+}
+#minuteHand {
+  background-color: black;
+  width: 0.7%;
+  height: 33%;
+  position: relative;
+  top: -36px;
+  left: 264px;
+  /* display: none; */
+  transform-origin: bottom;
+  /* transform: rotate(40deg); */
+}
+#secondHand {
+  background-color: black;
+  width: 0.7%;
+  height: 38%;
+  position: relative;
+  top: -237px;
+  left: 261px;
+  /* display: none; */
+  transform-origin: bottom;
+  /* transform: rotate(40deg); */
+}
