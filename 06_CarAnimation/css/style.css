@@ -1,0 +1,91 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  /* position: relative; */
+  background-image: url(../images_and_videos/background.jpg);
+  width: 100%;
+  /* height: 30%; */
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.tree {
+  background-image: url(../images_and_videos/trees.png);
+  width: 100%;
+  height: 790px;
+  /* background-position: top; */
+  position: absolute;
+  bottom: 12vh;
+  background-repeat: no-repeat;
+  
+}
+.track {
+  background-image: url(../images_and_videos/track.png);
+  height: 500px;
+  width: 700%;
+  background-repeat: no-repeat;
+  position: absolute;
+  bottom: -300px;
+  animation: trackMove .13s normal infinite;
+}
+.car {
+  background-image: url(../images_and_videos/car_body.png);
+  width: 20%;
+  height: 80px;
+  background-size: contain;
+  position: absolute;
+  bottom: 120px;
+  left: 300px;
+  background-repeat: no-repeat;
+  animation: shake 1s normal infinite;
+}
+
+.leftWheel {
+  /* transform-origin: bottom right; */
+  background-image: url(../images_and_videos/car_wheel_left.png);
+  background-size: contain;
+  /* border: 2px solid red; */
+  width: 43px;
+  position: absolute;
+  bottom: 122px;
+  left: 337px;
+  height: 43px;
+  background-repeat: no-repeat;
+  /* animation: wheelRotation .200s linear infinite; */
+  /* transform: rotate(504deg); */
+  border-radius: 26px;
+  animation: wheelRotation .16s linear infinite;
+}
+.rightWheel {
+  /* transform-origin: bottom right; */
+  background-image: url(../images_and_videos/car_wheel_left.png);
+  background-size: contain;
+  /* border: 2px solid red; */
+  width: 43px;
+  position: absolute;
+  bottom: 122px;
+  left:480px;
+  height: 43px;
+  background-repeat: no-repeat;
+  /* transform: rotate(504deg); */
+  border-radius: 26px;
+  animation: wheelRotation .16s linear infinite;
+}
+/* Animations */
+@keyframes wheelRotation {
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+    /* transform-origin:inherit; */
+  }
+}
+@keyframes trackMove {
+    100%{
+        transform:translate(-100px,0) ;
+    }
+}
+
