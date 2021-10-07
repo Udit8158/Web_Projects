@@ -1,0 +1,87 @@
+/* Navigation Bar  */
+.navbar{
+    background-color: red;
+    width: 80%;
+    height: 30%;
+    margin: auto;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+}
+.logo{
+    border: 2px solid blue;
+    border-radius: 60px;
+    width: 8vw;
+    height: 8vw;
+    background-image: url(../images_and_videos/logo.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.navbar ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.navbar li{
+    list-style: none;
+    margin: 0px 3vw;
+}
+.navbar li a{
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: var(--fontfamily1);
+}
+.navbar li a:hover{
+    text-decoration: underline;
+    color: var(--color1);
+}
+.navbar input{
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 15px;
+    width: 10vw;
+    margin: 0px 20px;
+    margin-left: 160px;
+    font-family: var(--fontfamily1);
+}
+.navbar button{
+    width: 7vw;
+    border-radius: 10px;
+    font-size: 15px;
+    padding:10px;
+    margin: 0px 20px;
+    font-family: var(--fontfamily1);
+    cursor: pointer;
+}
+.navbar button:hover{
+    background-color: var(--color1);
+}
+.horizontalline{
+    width: 80%;
+    margin: auto;
+}
+
+/* Home Section  */
+#home{
+    background-color: blue;
+    width: 80%;
+    height: 140vh;
+    margin: auto;
+}
+.contianer1{
+    /* width: 63%; */
+    height: 50vh;
+    background-color: red;
+    display: flex;
+}
+#text{
+    width: 70%;
+    background-color: green;
+    height: inherit;
+}
+#logo{
+    /* height: inherit; */
+    background-color: pink;
+    width: 30%;
+}
