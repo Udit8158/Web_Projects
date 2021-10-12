@@ -32,3 +32,9 @@
   width: 50%;
   font-family: var(--fontfamily2);
 }
+.socialmedia{
+  height: 20vh;
+  width: 70%;
+  margin: auto;
+  background-color: blue;
+}
