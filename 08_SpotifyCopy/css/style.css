@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Ubuntu:wght@300&display=swap');
+
+/* Header section */
+*{
+    margin: 0;padding: 0;
+}
+body{
+    background-color: antiquewhite;
+}
+.navbar{
+    background-color: black;
+    height: 12vh;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+}
+.navbar ul {
+    display: flex;
+    align-items: center;
+}
+.navbar ul li {
+    list-style: none;
+    /* padding: 5px 20px; */
+    color: wheat;
+    cursor: pointer;
+}
+#brand{
+    font-size: 22px;
+    font-weight: bolder;
+}
+.navmain{
+    padding: 0 60px;
+}
+.navmain:hover{
+    text-decoration: underline;
+}
+#logo img{
+    height: 80px;
+}
+
+/* Main section */
+.musiclist{
+    background-image: url(../necessaryFiles/bg.jpg);
+    width: 80%;
+    margin: auto;
+    height: 70vh;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.musicnames{
+    width: 40%;
+    height: 5vh;
+    background-color: white;
+    margin-left: 10px;
+    border-radius: 20px;
+}
+.musiccontroller{
+    background-color: black;
+    color: white;
+    height: 20vh;
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-content: center; */
+}
+.musiccontroller input{
+    width: 70%;
+    margin-left: 265px;
+    margin-top: 35px;
+}
