@@ -48,6 +48,8 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight:bold;
 }
 .musicnames{
     width: 40%;
@@ -55,6 +57,14 @@ body{
     background-color: white;
     margin-left: 10px;
     border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: black;
+}
+.coverofSongs{
+    width: 40px;
+    border-radius: 30px;
 }
 .musiccontroller{
     background-color: black;
@@ -68,4 +78,23 @@ body{
     width: 70%;
     margin-left: 265px;
     margin-top: 35px;
+}
+.icons{
+    /* background-color: blue; */
+    width: 20vw;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+.displaymusic{
+    position: absolute;
+    left: 9vw;
+    bottom: 3vw;
+}
+.displaymusic img{
+    width:76px;
+    opacity: 0;
+    transition: opacity 0.1s ease-in;
 }
