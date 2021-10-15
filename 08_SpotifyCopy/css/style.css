@@ -96,5 +96,5 @@ body{
 .displaymusic img{
     width:76px;
     opacity: 0;
-    transition: opacity 0.1s ease-in;
+    transition: opacity .5s ease-in;
 }

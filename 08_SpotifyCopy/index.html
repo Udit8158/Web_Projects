@@ -65,14 +65,14 @@
         </div>
       </div>
       <div class="musiccontroller">
-        <input type="range" />
+        <input type="range" id="myProgressBar" value="0"/>
         <div class="icons">
-            <i class="fas fa-3x fa-step-backward"></i>
-            <i class="far fa-3x fa-play-circle"></i>
-          <i class="fas fa-3x fa-step-forward"></i>
+            <i class="fas fa-3x fa-step-backward" id="backwardBtn"></i>
+            <i class="far fa-3x fa-play-circle" id="playpauseBtn"></i>
+          <i class="fas fa-3x fa-step-forward" id="forwardBtn"></i>
         </div>
-        <div class="displaymusic">
-            <img src="/necessaryFiles/playing.gif" alt="notfound">Warriyo - Mortals [NCS Release]
+        <div class="displaymusic" >
+            <img id="myGIF" src="/necessaryFiles/playing.gif" alt="notfound">Warriyo - Mortals [NCS Release]
         </div>
       </div>
     </main>
@@ -80,5 +80,6 @@
       src="https://kit.fontawesome.com/9a6d08774b.js"
       crossorigin="anonymous"
     ></script>
+    <script src="/js/script.js"></script>
   </body>
 </html>
