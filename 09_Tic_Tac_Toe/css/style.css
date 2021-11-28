@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Tamma+2&display=swap');
+
+*{
+    margin: 0;padding: 0;
+    font-family: 'Baloo Tamma 2', cursive;
+}
+/* NavBar  */
+.navBar{
+    height: 50px;
+    background-color: rgb(38, 16, 58);
+    color: white;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+}
+.navBar ul li {
+    list-style: none;
+    padding: 0 10px;
+}
+
+/* Game container  */
+.gameContainer{
+    /* background-color: yellow; */
+    display: flex;
+    margin: 40px 20px;
+}
+
+/* gamesection  */
+.gameSection{
+    /* display: inline-block; */
+    /* background-color: rebeccapurple; */
+    /* width: 400px; */
+    display: grid;
+    grid-template-rows: repeat(3, 10vw);
+    grid-template-columns: repeat(3, 10vw);
+}
+.box{
+    border: 2px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5vw;
+}
+.box :hover{
+    background-color: rgb(156, 101, 207);
+}
+
+/* gameInfo  */
+.gameInfo{
+    /* display: inline-block; */
+    /* background-color: royalblue; */
+    display: flex;
+    flex-direction: column;
+    margin: 0 100px;
+
+    /* justify-content: center; */
+    /* align-items: center; */
+}
+
+/* utility classes for borders in boxes  */
+.br-0{
+    border-right: 0;
+}
+
+.bl-0{
+    border-left: 0;
+}
+
+.bt-0{
+    border-top: 0;
+}
+
+.bb-0{
+    border-bottom: 0;
+}
