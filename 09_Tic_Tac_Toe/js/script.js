@@ -1,62 +1,69 @@
-console.log("welcome in My TicTacToe");
+console.log("Welcome to Tic Tac Toe")
+let music = new Audio("music.mp3")
+let audioTurn = new Audio("ting.mp3")
+let gameover = new Audio("gameover.mp3")
+let turn = "X"
+let isgameover = false;
+let reset = document.getElementById("reset")
 
-//Grab the required elements
-let boxes = Array.from(document.querySelectorAll(".box"));  //array of boxes
-let boxText = Array.from(document.querySelectorAll(".boxtext")); //array of boxtext
-let info = document.querySelector(".info");
-let imgbox = document.querySelector(".imgbox")
-let resetButton = document.getElementById("reset");
-let tingMusic = new Audio("ting.mp3"); //play sound
-let gameOverMusic = new Audio("gameover.mp3"); //gameover music
+// Function to change the turn
+const changeTurn = ()=>{
+    return turn === "X"? "0": "X";  //using ternary operator
+}
 
-//Initialize others variables
-let turn = "X";
-
-//Hide the image gif initially
-imgbox.style.display = "none";
-
-//Check win
-let checkWin = ()=>{
+// Function to check for a win
+const checkWin = ()=>{
     let boxtext = document.getElementsByClassName('boxtext');
-    //making array of win possibilities
+    //making wins possibilites and transitions of the line
     let wins = [
-        [0, 1, 2],
-        [3, 4, 5],
-        [6, 7, 8],
-        [0, 3, 6],
-        [1, 4, 7],
-        [2, 5, 8],
-        [0, 4, 8],
-        [2, 4, 6],
+        [0, 1, 2, 5, 5, 0],
+        [3, 4, 5, 5, 15, 0],
+        [6, 7, 8, 5, 25, 0],
+        [0, 3, 6, -5, 15, 90],
+        [1, 4, 7, 5, 15, 90],
+        [2, 5, 8, 15, 15, 90],
+        [0, 4, 8, 5, 15, 45],
+        [2, 4, 6, 5, 15, 135],
     ]
-    wins.forEach( e => {
-        console.log(e[2]);
-        let boxtext = document.getElementsByClassName('boxtext');
-        console.log(boxtext[e[2]]);  //these lines are for feel
-        // console.log(boxtext);
-        if((boxtext[e[0]].innerText === boxtext[e[1]].innerText) && (boxtext[e[1]].innerText === boxtext[e[2]].innerText) && (boxtext[e[0]].innerText !== "") ){
-            let info = document.querySelector(".info");
-            info.innerText = `${boxtext[e[0]].innerText} Won`;
+    wins.forEach(e =>{
+        if((boxtext[e[0]].innerText === boxtext[e[1]].innerText) && (boxtext[e[2]].innerText === boxtext[e[1]].innerText) && (boxtext[e[0]].innerText !== "") ){
+            document.querySelector('.info').innerText = boxtext[e[0]].innerText + " Won"
+            isgameover = true
+            document.querySelector('.imgbox').getElementsByTagName('img')[0].style.width = "200px";
+            document.querySelector(".line").style.transform = `translate(${e[3]}vw, ${e[4]}vw) rotate(${e[5]}deg)`
+            document.querySelector(".line").style.width = "20vw";
         }
     })
 }
-//Print the X or 0
-boxes.forEach((e)=>{
-    e.addEventListener("click",(element)=>{
-        if (turn == "X") {
-            element.target.innerText = "X";
-            turn = "0";
-            info.innerText = "Turn for 0";
-            tingMusic.play();
+
+// Game Logic
+// music.play()
+let boxes = document.getElementsByClassName("box");
+Array.from(boxes).forEach(element =>{
+    let boxtext = element.querySelector('.boxtext');
+    element.addEventListener('click', ()=>{
+        if(boxtext.innerText === ''){
+            boxtext.innerText = turn;
+            turn = changeTurn();
+            audioTurn.play();
             checkWin();
-        }
-        else {
-            element.target.innerText = "0";
-            turn = "X";
-            info.innerText = "Turn for X";
-            tingMusic.play();
-            checkWin()
+            if (!isgameover){
+                document.getElementsByClassName("info")[0].innerText  = "Turn for " + turn;
+            } 
         }
     })
+})
+
+// Add onclick listener to reset button
+reset.addEventListener('click', ()=>{
+    let boxtexts = document.querySelectorAll('.boxtext');
+    Array.from(boxtexts).forEach(element => {
+        element.innerText = ""
+    });
+    turn = "X"; 
+    isgameover = false
+    document.querySelector(".line").style.width = "0vw";
+    document.getElementsByClassName("info")[0].innerText  = "Turn for " + turn;
+    document.querySelector('.imgbox').getElementsByTagName('img')[0].style.width = "0px"
 })
 
