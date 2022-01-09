@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  .accordion-container {
+    margin-top: 10vh;
+  }
+  .accordion-items {
+    margin: 20px 80px;
+    /* background-color: aquamarine; */
+  }
+  .accordion-btn {
+    width: 100%;
+    height: 5vh;
+    margin-bottom: 10px;
+  }
+  .accordion-btn::after {
+    content: "\002B"; /*This is for plus sign (css entity code) */
+    position: relative;
+    left: 635px;
+    font-size: 20px;
+  }
+  .accordion-pannel {
+    padding: 0px 20px 8px 20px;
+    display: none;   /*Controlled by js */
+  }
+  
