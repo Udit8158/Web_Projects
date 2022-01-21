@@ -1,0 +1,1 @@
+document.querySelector('.contact').classList.add('active');

@@ -1,0 +1,1 @@
+document.querySelector('.about').classList.add('active');
