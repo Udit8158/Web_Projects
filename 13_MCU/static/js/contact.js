@@ -13,4 +13,10 @@ hamburger.addEventListener('click', () => {
         console.log(menu)
         menu.style.visibility = 'hidden';
     }
-})
+});
+
+
+
+
+
+
