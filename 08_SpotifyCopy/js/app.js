@@ -66,7 +66,7 @@ const songs = [
 // Audio Elemnt
 let songIndex = 0;
 let audioElement = new Audio(songs[`${songIndex}`].filePath);
-console.log(audioElement);
+// console.log(audioElement);
 // audioElement.play();
 
 // Grab elements
@@ -77,9 +77,12 @@ const forwardBtn = document.querySelector("#forwardBtn");
 const myGIF = document.querySelector("#myGIF");
 const displayMusicName = document.querySelector("#displayMusicName");
 const myProgressBar = document.querySelector("#myProgressBar");
+const indiVidualGIF = document.querySelectorAll(".indiVidualGIF");
 
-// Declare useful variables
+// Declare useful variables [These are variables for if else conditition]
 let musicPlay = false;
+let individualSongPlay = false;
+
 // Manupulate DOM songs
 musicElementsArr.forEach((element, index) => {
   // console.log(element);
@@ -87,39 +90,41 @@ musicElementsArr.forEach((element, index) => {
   element.children[1].innerText = songs[index].songName;
   element.children[2].innerText = songs[index].duration;
 
-  element.children[3].addEventListener("click", function () {
+  element.children[4].addEventListener("click", function () {
     console.log("Clicked on", this);
 
-    // TODO: Solve individual song play bug
-    let individualSongPlay = false;
+    // TODO: Solve individual song play bug (Fixed the bug)
+    // Play individual song
+
     if (!individualSongPlay) {
+      console.log("In if part");
       songIndex = Number(this.id) - 1;
       audioElement = new Audio(songs[`${songIndex}`].filePath);
-      playSong();
-      // this.classList.remove("fa-play-circle");
-      // this.classList.add("fa-pause-circle");
       individualSongPlay = true;
+      playSong();
     } else {
+      console.log("In else part");
+      pauseSong();
       songIndex = Number(this.id) - 1;
       audioElement = new Audio(songs[`${songIndex}`].filePath);
-      pauseSong();
-      // this.classList.remove("fa-pause-circle");
-      // this.classList.add("fa-play-circle");
       individualSongPlay = false;
     }
   });
 });
+
+// Defining some functions
 
 const playSong = () => {
   audioElement.play();
   playpauseBtn.classList.remove("fa-play-circle");
   playpauseBtn.classList.add("fa-pause-circle");
   myGIF.style.opacity = 1;
+  indiVidualGIF[songIndex].style.opacity = "1";
   displayMusicName.innerText = songs[songIndex].songName;
   // myProgressBar.value = 0;
 
-  musicElementsArr[songIndex].children[3].classList.remove("fa-play-circle");
-  musicElementsArr[songIndex].children[3].classList.add("fa-pause-circle");
+  musicElementsArr[songIndex].children[4].classList.remove("fa-play-circle");
+  musicElementsArr[songIndex].children[4].classList.add("fa-pause-circle");
 
   // To controll myProgressBar
   controllProgressBar();
@@ -131,11 +136,13 @@ const pauseSong = () => {
   playpauseBtn.classList.remove("fa-pause-circle");
   myGIF.style.opacity = 0;
   displayMusicName.innerText = "";
+  indiVidualGIF[songIndex].style.opacity = "0";
 
-  musicElementsArr[songIndex].children[3].classList.remove("fa-pause-circle");
-  musicElementsArr[songIndex].children[3].classList.add("fa-play-circle");
+  musicElementsArr[songIndex].children[4].classList.remove("fa-pause-circle");
+  musicElementsArr[songIndex].children[4].classList.add("fa-play-circle");
 };
-// controll music
+
+// controll music  [Event Listners]
 
 // Play-Pause
 playpauseBtn.addEventListener("click", () => {
@@ -148,6 +155,7 @@ playpauseBtn.addEventListener("click", () => {
     musicPlay = false;
   }
 });
+
 // Forward music
 forwardBtn.addEventListener("click", () => {
   pauseSong();
@@ -162,6 +170,7 @@ forwardBtn.addEventListener("click", () => {
   // console.log(audioElement);
   playSong();
 });
+
 // Backward music
 backwardBtn.addEventListener("click", () => {
   myProgressBar.value = 0;
