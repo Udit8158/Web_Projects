@@ -11,7 +11,11 @@ const previewNoteBody = document.querySelector(".note-body");
 
 //Declare important variables
 const notesData = localStorage.getItem("notesData");
-
+let indexToSave = 0;
+let indexToDelete = 0;
+// Time stuff
+let date = new Date();
+console.log(date.toString().substring(0, 21));
 // Creating functions
 const showNote = () => {
   if (notesData === null) {
@@ -29,7 +33,7 @@ const showNote = () => {
               <div class="delete-btn" >
                 <i class="fa fa-trash-o" style="font-size: 24px"></i>
               </div>
-              <div class="save-btn" onclick="saveNote()" >
+              <div class="save-btn"  >
                 <i class="fa fa-save" style="font-size: 24px"></i>
               </div>
             </div>
@@ -51,18 +55,7 @@ const showNote = () => {
 };
 showNote(); // Call this function when the website is start
 
-const saveNote = () => {
-  console.log("clicked");
-  notesArr = JSON.parse(localStorage.getItem("notesData"));
-  let myObj = {
-    noteTitle: previewNoteTitle.value,
-    noteBody: previewNoteBody.value,
-  };
-  console.log(this);
-  notesArr.splice(0, 1, myObj);
-  localStorage.setItem("notesData", JSON.stringify(notesArr));
-  showNote();
-};
+const saveNote = () => {};
 
 // Event listners
 addNoteBtn.addEventListener("click", () => {
@@ -84,6 +77,10 @@ addNoteBtn.addEventListener("click", () => {
 // Active class adding and removing stuff
 Array.from(smallNoteViewContainer.children).forEach((smallNote) => {
   smallNote.addEventListener("click", function () {
+    // set preview as the small note
+    previewNoteTitle.value = notesArr[this.id].noteTitle;
+    previewNoteBody.innerText = notesArr[this.id].noteBody;
+
     // Show the preview container after clicking the small note
     Array.from(previewContainer.children).forEach((e) => {
       e.classList.remove("hide");
@@ -97,5 +94,38 @@ Array.from(smallNoteViewContainer.children).forEach((smallNote) => {
 
     // then add the active class in the clicked small note
     this.classList.add("active-note");
+  });
+});
+
+// Save note functionality on smallnotes
+const saveBtns = document.querySelectorAll(".save-btn");
+
+saveBtns.forEach((saveBtnIndividual) => {
+  saveBtnIndividual.addEventListener("click", function () {
+    console.log("clicked");
+    notesArr = JSON.parse(localStorage.getItem("notesData"));
+    let myObj = {
+      noteTitle: previewNoteTitle.value,
+      noteBody: previewNoteBody.value,
+    };
+    indexToSave = this.parentElement.parentElement.id;
+    console.log(indexToSave);
+    notesArr.splice(indexToSave, 1, myObj); // For update
+    localStorage.setItem("notesData", JSON.stringify(notesArr));
+    document.location.reload(); // TODO: How to avoid reload
+    showNote();
+  });
+});
+
+// Adding the delete functionality on the small note
+const deleteBtns = document.querySelectorAll(".delete-btn");
+
+deleteBtns.forEach((deleteBtnIndividual) => {
+  deleteBtnIndividual.addEventListener("click", function () {
+    notesArr = JSON.parse(localStorage.getItem("notesData"));
+    indexToDelete = this.parentElement.parentElement.id;
+    notesArr.splice(indexToDelete, 1); // For delete
+    localStorage.setItem("notesData", JSON.stringify(notesArr));
+    document.location.reload();
   });
 });
