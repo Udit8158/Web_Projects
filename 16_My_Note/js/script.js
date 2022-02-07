@@ -79,7 +79,7 @@ Array.from(smallNoteViewContainer.children).forEach((smallNote) => {
   smallNote.addEventListener("click", function () {
     // set preview as the small note
     previewNoteTitle.value = notesArr[this.id].noteTitle;
-    previewNoteBody.innerText = notesArr[this.id].noteBody;
+    previewNoteBody.value = notesArr[this.id].noteBody;
 
     // Show the preview container after clicking the small note
     Array.from(previewContainer.children).forEach((e) => {
