@@ -129,3 +129,22 @@ deleteBtns.forEach((deleteBtnIndividual) => {
     document.location.reload();
   });
 });
+
+// Adding search functionality
+const searchElement = document.querySelector(".search-section");
+
+searchElement.addEventListener("search", () => {
+  let searchValue = searchElement.value;
+  console.log(searchValue);
+  let titleToMatch = [];
+  notesArr.forEach((e) => {
+    titleToMatch.push(e.noteTitle);
+  });
+  // console.log(titleToMatch);
+  let n = titleToMatch.filter((e) => {
+    // console.log(searchValue);
+    // e.toLowerCase() == searchValue;
+    e.includes(searchValue);
+  });
+  console.log(n);
+});

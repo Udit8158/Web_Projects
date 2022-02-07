@@ -17,7 +17,18 @@
   width: 20%;
   padding: 18px;
 }
-
+.search-section {
+  width: 100%;
+  margin: 6px 0;
+  margin-bottom: 8px;
+  padding: 8px;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  font-size: medium;
+  height: 8vh;
+  background-color: #c5b0b0;
+}
 .add-note-btn {
   padding: 8px;
   text-align: center;
