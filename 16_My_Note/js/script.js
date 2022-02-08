@@ -133,18 +133,27 @@ deleteBtns.forEach((deleteBtnIndividual) => {
 // Adding search functionality
 const searchElement = document.querySelector(".search-section");
 
-searchElement.addEventListener("search", () => {
-  let searchValue = searchElement.value;
-  console.log(searchValue);
-  let titleToMatch = [];
-  notesArr.forEach((e) => {
-    titleToMatch.push(e.noteTitle);
+searchElement.addEventListener("search", (d) => {
+  let searchValue = searchElement.value.toLowerCase();
+  // console.log(searchValue);
+  console.log(d);
+  // Grab all the small notes to cheek the match and hide or show
+  const smallNoteView = document.querySelectorAll(".small-note-view");
+  smallNoteView.forEach((e) => {
+    // if (e.children[0].innerText.toLowerCase() !== searchValue) {
+    //   e.classList.add("hide");
+    // } else {
+    //   e.classList.remove("hide");
+    // }
+    if (e.children[0].innerText.toLowerCase().includes(searchValue)) {
+      e.classList.remove("hide");
+    } else {
+      e.classList.add("hide");
+    }
   });
-  // console.log(titleToMatch);
-  let n = titleToMatch.filter((e) => {
-    // console.log(searchValue);
-    // e.toLowerCase() == searchValue;
-    e.includes(searchValue);
-  });
-  console.log(n);
+
+  // After removing the search all small notes will be visible
+  if (searchElement.value === "") {
+    smallNoteView.forEach((e) => e.classList.remove("hide"));
+  }
 });
