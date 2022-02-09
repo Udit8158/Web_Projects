@@ -14,8 +14,9 @@ const notesData = localStorage.getItem("notesData");
 let indexToSave = 0;
 let indexToDelete = 0;
 // Time stuff
-let date = new Date();
+const date = new Date();
 console.log(date.toString().substring(0, 21));
+var time = date.getMinutes();
 // Creating functions
 const showNote = () => {
   if (notesData === null) {
@@ -52,6 +53,16 @@ const showNote = () => {
     });
     smallNoteViewContainer.innerHTML = "You donot have notes to show.";
   }
+
+  // TODO: Try to updat time
+  const smallNoteView = Array.from(
+    document.querySelectorAll(".small-note-view")
+  );
+  console.log(smallNoteView);
+  smallNoteView.sort((a, b) => {
+    console.log(a.id, b.id);
+    return b.id - a.id;
+  });
 };
 showNote(); // Call this function when the website is start
 
