@@ -87,6 +87,15 @@
   width: 100%;
 }
 
+#mobile {
+  width: 80px;
+  font-size: larger;
+  background-color: transparent;
+  border: none;
+  font-weight: bolder;
+  /* display: none; */
+}
+
 .note-title {
   width: 100%;
   outline: none;
