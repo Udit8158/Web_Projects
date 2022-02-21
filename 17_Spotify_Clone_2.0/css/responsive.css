@@ -1,0 +1,84 @@
+/* Small laptop */
+@media (max-width: 1024px) {
+  .navBar {
+    font-size: 1.8rem;
+  }
+  .searchElement {
+    font-size: 1rem;
+  }
+  .songContainer {
+    min-height: 70vh;
+    margin: 1vh 0;
+    /* background-color: red; */
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0px;
+  }
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .navBar {
+    font-size: 1.8rem;
+  }
+  .searchElement {
+    font-size: 0.8rem;
+  }
+  .songContainer {
+    min-height: 117vh;
+    margin: 1vh 0;
+    /* background-color: red; */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+  /* .mediaControll {
+    height: 10vh;
+  } */
+}
+
+/* Mobile Large*/
+@media (max-width: 426px) {
+  .navBar {
+    font-size: 1.8rem;
+  }
+  .searchElement {
+    left: 300px;
+    width: 70%;
+    font-size: 1rem;
+  }
+  .songContainer {
+    min-height: 117vh;
+    margin: 1vh 0;
+    /* background-color: red; */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+  /* .mediaControll {
+    height: 10vh;
+  } */
+}
+
+/* Mobile */
+@media (max-width: 330px) {
+  .navBar {
+    font-size: 2rem;
+  }
+  .searchElement {
+    left: 300px;
+    width: 90%;
+    font-size: 1.1rem;
+  }
+  .songContainer {
+    min-height: 110vh;
+    margin: 1vh 0;
+    /* background-color: red; */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+  /* .mediaControll {
+    height: 10vh;
+  } */
+}
