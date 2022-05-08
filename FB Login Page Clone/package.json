@@ -1,0 +1,18 @@
+{
+  "name": "fb-login-page-clone",
+  "version": "1.0.0",
+  "description": "This is a facebook login page clone with tailwind css",
+  "main": "index.js",
+  "scripts": {
+    "start": "vite",
+    "build": "vite build"
+  },
+  "author": "Udit",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.7",
+    "postcss": "^8.4.13",
+    "tailwindcss": "^3.0.24",
+    "vite": "^2.9.8"
+  }
+}
