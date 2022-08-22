@@ -1,0 +1,8 @@
+@media (max-width: 1200px) {
+  .time-text {
+    font-size: 4.2rem;
+  }
+  .input {
+    font-size: 0.8rem;
+  }
+}

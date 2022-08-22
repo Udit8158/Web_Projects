@@ -1,0 +1,114 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background-image: linear-gradient(#084ebf, #4080e6);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+/* Utility Classes */
+.d-none {
+  display: none;
+}
+
+.alert-message {
+  position: absolute;
+  width: 100vw;
+  height: 10vh;
+  background-color: #4080e6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3rem;
+  font-weight: lighter;
+  color: antiquewhite;
+}
+
+/* Clock Time Section */
+.clock-time {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.time-text {
+  font-size: 10rem;
+  color: rgb(138, 205, 255);
+}
+
+.buttons-section {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+  min-width: 60%;
+}
+
+.btn {
+  max-width: 12em;
+  max-height: 3em;
+  /* background-color: #0e07dd; */
+  background-color: transparent;
+  outline: none;
+  border: #4080e6;
+  color: rgb(231, 238, 244);
+  padding: 0.5rem;
+  border-radius: 8px;
+  transition: all;
+  transition-delay: 20ms;
+  transition-timing-function: ease-in;
+  font-size: 1.2rem;
+}
+.btn:hover {
+  background-color: #9bbbef;
+  color: black;
+}
+
+/* Alarm Section */
+
+.alarm-input {
+  min-height: 25vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.input {
+  margin-top: 10vh;
+  outline: none;
+  min-width: 25vw;
+  min-height: 5vh;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 8px;
+  padding: 6px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  margin-top: 4vh;
+  min-width: 50vw;
+  justify-content: space-between;
+}
+
+/* Timer Section */
+
+.timer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.timer-text {
+  font-size: 4rem;
+  color: white;
+}
