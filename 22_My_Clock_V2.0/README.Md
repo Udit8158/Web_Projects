@@ -1,4 +1,5 @@
 This is my new clock project with new style and new features like alarm and timer. If you have any issue or bug please connect with me.
+I create this on 22nd august 2022.
 
 ![Screenshot (1)](https://user-images.githubusercontent.com/88493369/185830001-de1ec1e6-ecfd-48b1-93ef-c21f2434785d.png)
 
